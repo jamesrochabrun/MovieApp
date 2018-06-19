@@ -21,7 +21,8 @@ class MovieCell: UICollectionViewCell {
         
         titleLabel.text = viewModel.title
         releaseDateLabel.text = viewModel.releaseDate
-        self.movieCoverImageView.image = nil
+        guard let url = viewModel.coverPath else { return }
+        self.movieCoverImageView.loadImageUsingCacheWithURLString(url, placeHolder: nil) { (_) in
+        }
     }
-    
 }

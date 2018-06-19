@@ -28,9 +28,9 @@ class MainTabBarController: UITabBarController {
         
          let sController = MovieSearchController.init(collectionViewLayout: ListFlowLayout())
         let searchNavController = generateNavController(root: sController, title: "Search", image: nil)
-        let favNavController = generateNavController(root: MovieGridController(), title: "grid", image: nil)
-        
+        let favNavController = generateNavController(root: OverViewcontroller(), title: "Overview", image: nil)
         let dController = DisplayController.init(collectionViewLayout: ListFlowLayout())
+        
         let downloadNavController = generateNavController(root: dController, title: "Display", image: nil)
         viewControllers = [searchNavController, favNavController, downloadNavController]
     }

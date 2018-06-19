@@ -24,6 +24,9 @@ extension GenericAPIClient {
                 return
             }
             if httpResponse.statusCode == 200 {
+                
+                dump(response?.url)
+                
                 if let data = data {
                     do {
                         let genericModel = try JSONDecoder().decode(decodingType, from: data)

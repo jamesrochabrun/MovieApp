@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Movie: Decodable {
+class Movie: Decodable, Searchable {
     
     var title: String?
     let poster_path: String?

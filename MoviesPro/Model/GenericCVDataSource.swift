@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// This class is a simple, immutable, declarative data source Collectionview
-final class GenericDataSource<V, T: Searchable> : NSObject, UICollectionViewDataSource where V: UICollectionViewCell {
+final class GenericCVDataSource<V, T: Searchable> : NSObject, UICollectionViewDataSource where V: UICollectionViewCell {
     
     private var models: [T]
     private let configureCell: CellConfiguration

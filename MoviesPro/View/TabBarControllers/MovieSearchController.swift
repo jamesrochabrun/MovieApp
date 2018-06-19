@@ -16,7 +16,7 @@ class MovieSearchController: UICollectionViewController {
     
     // MARK: - Private
     private let client: MovieClient = MovieClient.init()
-    private var genericDataSource: GenericDataSource<MovieCell, MovieViewModel>?
+    private var genericDataSource: GenericCVDataSource<MovieCell, MovieViewModel>?
     
     // MARK: - App LifeCycle
     override func viewDidLoad() {
@@ -29,7 +29,6 @@ class MovieSearchController: UICollectionViewController {
     
     // MARK: - UI Config
     private func configCollectionView() {
-        
         self.collectionView?.registerNib(MovieCell.self)
     }
     
@@ -58,7 +57,7 @@ class MovieSearchController: UICollectionViewController {
     
     // MARK:- set datasource
     private func setUpDataSource(with models: [Movie]) {
-        genericDataSource = GenericDataSource(models: models.compactMap { MovieViewModel( $0) }) { cell, model in
+        genericDataSource = GenericCVDataSource(models: models.compactMap { MovieViewModel( $0) }) { cell, model in
             cell.configure(viewModel: model)
             return cell
         }
